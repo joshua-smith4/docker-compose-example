@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  bill:
+    build: ./frontend
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./frontend:/code
+  ted:
+    build: ./api
+    ports:
+      - "8081:3000"
+    volumes:
+      - ./api:/code
+  db:
+    image: mongo:latest
